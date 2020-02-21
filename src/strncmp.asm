@@ -1,8 +1,6 @@
 global strncmp
 
-strncmp
-    mov rax, 0
-    ret
+strncmp:
     mov rcx, 0
 
 loop:
