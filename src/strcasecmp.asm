@@ -29,13 +29,13 @@ second_check:
 
 compare:
     cmp bl, 0
-        je end
-        cmp al, 0
-        je end
-        cmp al, bl
-        jne end
-        inc rcx
-        jmp first_check
+    je end
+    cmp al, 0
+    je end
+    cmp al, bl
+    jne end
+    inc rcx
+    jmp first_check
 
 end:
     sub al, bl
