@@ -13,12 +13,13 @@ LD	=	ld
 
 LD_FLAGS	=	-shared
 
-SRC	=	src/strlen.asm	\
-		src/strchr.asm	\
-		src/strcmp.asm	\
-		src/memset.asm	\
-		src/memcpy.asm	\
-		src/strncmp.asm	\
+SRC	=	src/strlen.asm		\
+		src/strchr.asm		\
+		src/strcmp.asm		\
+		src/memset.asm		\
+		src/memcpy.asm		\
+		src/strncmp.asm		\
+		src/strcasecmp.asm	\
 
 
 OBJ	=	$(SRC:.asm=.o)
