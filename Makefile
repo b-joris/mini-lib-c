@@ -20,6 +20,7 @@ SRC	=	src/strlen.asm		\
 		src/memcpy.asm		\
 		src/strncmp.asm		\
 		src/strcasecmp.asm	\
+		src/rindex.asm		\
 
 
 OBJ	=	$(SRC:.asm=.o)
@@ -36,7 +37,6 @@ $(NAME):	$(OBJ)
 
 clean:
 	rm -rf $(OBJ)
-	rm -rf $(COBJ)
 
 fclean:	clean
 	rm -rf $(NAME)
