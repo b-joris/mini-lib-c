@@ -5,17 +5,17 @@ strcmp:
 
 loop:
     mov al, [rdi + rcx]
-    mov bl, [rsi + rcx]
-    cmp bl, 0
+    mov r10b, [rsi + rcx]
+    cmp r10b, 0
     je end
     cmp al, 0
     je end
-    cmp al, bl
+    cmp al, r10b
     jne end
     inc rcx
     jmp loop
 
 end:
-    sub al, bl
+    sub al, r10b
     movsx rax, al
     ret
