@@ -6,7 +6,7 @@ memset:
 
 loop:
     cmp rcx, rdx
-    jz end
+    je end
     mov [rax], sil
     inc rax
     inc rcx

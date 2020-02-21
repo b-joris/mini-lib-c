@@ -6,9 +6,9 @@ memcpy:
 
 loop:
     cmp rcx, rdx
-    jz end
-    mov r10b, [rsi + rcx]
-    mov [rdi + rcx], r10b
+    je end
+    mov bl, [rsi + rcx]
+    mov [rdi + rcx], bl
     inc rcx
     jmp loop
 
