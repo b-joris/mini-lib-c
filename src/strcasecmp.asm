@@ -1,8 +1,5 @@
 global strcasecmp
 
-;int strcasecmp(const char *s1, const char *s2)
-;rdi, rsi
-
 strcasecmp:
     mov rcx, 0
     jmp first_check
