@@ -1,4 +1,5 @@
- void *memmove(void *dest, const void *src, size_t n)
+global my_memmove
 
-global memmove:
-    
+my_memmove:
+    mov rax, rdi
+    ret
