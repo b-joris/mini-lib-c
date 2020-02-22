@@ -9,10 +9,11 @@ CC	=	gcc
 
 ASM_FOLDER	=	../src
 
-SRC	=	./test_strlen.c
+SRC	=	./test_strlen.c		\
+		./test_strchr.c
 
 OBJ	=	$(ASM_FOLDER)/strlen.o	\
-		$(ASM_FOLDER)/memset.o	\
+		$(ASM_FOLDER)/strchr.o	\
 
 TESTS_FLAGS	=	-I../include -lcriterion --coverage
 
