@@ -5,3 +5,6 @@
 asm
 test
 .ssh/
+*.gcda
+*.gcno
+unit_tests
