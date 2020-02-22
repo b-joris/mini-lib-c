@@ -1,2 +1,6 @@
 *.o
 *.so
+.bash_history
+.viminfo
+asm
+test
