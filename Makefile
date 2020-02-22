@@ -23,6 +23,7 @@ SRC	=	src/strlen.asm		\
 		src/rindex.asm		\
 		src/strstr.asm		\
 		src/strpbrk.asm		\
+		src/strcspn.asm
 
 OBJ	=	$(SRC:.asm=.o)
 
@@ -47,6 +48,8 @@ re:	fclean all
 test:	re
 	gcc -c -fpic -fPIC main.c
 	gcc -lasm -L./ main.o -o asm
+	rm main.o
+	make clean
 	clear
 	LD_LIBRARY_PATH=./ LD_PRELOAD=./libasm.so ./asm
 
