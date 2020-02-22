@@ -1,7 +1,5 @@
 global strstr
 
-;char *strstr(const char *haystack, const char *needle);
-
 strstr:
     mov rax, rdi; haystack
     mov rbx, rsi; needle
