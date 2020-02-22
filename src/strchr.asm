@@ -7,9 +7,12 @@ loop:
     cmp byte[rdi], 0
     je end
     cmp byte[rdi], sil
-    cmove rax, rdi
+    je found
     inc rdi
     jmp loop
+
+found:
+    mov rax, rdi
 
 end:
     ret
