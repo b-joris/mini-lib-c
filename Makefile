@@ -21,7 +21,7 @@ SRC	=	src/strlen.asm		\
 		src/strncmp.asm		\
 		src/strcasecmp.asm	\
 		src/rindex.asm		\
-
+		src/strstr.asm
 
 OBJ	=	$(SRC:.asm=.o)
 
@@ -45,8 +45,8 @@ re:	fclean all
 
 test:	re
 	gcc -c -fpic -fPIC main.c
-	gcc -lasm -L./ main.o -o test
+	gcc -lasm -L./ main.o -o asm
 	clear
-	LD_LIBRARY_PATH=./ LD_PRELOAD=./libasm.so ./test
+	LD_LIBRARY_PATH=./ LD_PRELOAD=./libasm.so ./asm
 
 .PHONY:	all clean fclean re $(NAME)
