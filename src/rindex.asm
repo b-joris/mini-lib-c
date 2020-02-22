@@ -2,19 +2,18 @@ global rindex
 
 rindex:
     mov r10, 0
-    mov rcx, 0
 
 loop:
-    cmp byte[rdi + rcx], 0
+    cmp byte[rdi], 0
     je end
-    cmp byte[rdi + rcx], sil
+    cmp byte[rdi], sil
     je update_found
-    inc rcx
+    inc rdi
     jmp loop
 
 update_found:
     mov r10, rdi
-    inc rcx
+    inc rdi
     jmp loop
 
 end:
