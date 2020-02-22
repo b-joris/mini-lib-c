@@ -1,5 +1,7 @@
 global memset
+global my_memset
 
+my_memset:
 memset:
     mov rax, rdi
     mov rcx, 0

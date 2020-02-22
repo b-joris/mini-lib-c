@@ -1,5 +1,7 @@
 global strlen
+global my_strlen
 
+my_strlen:
 strlen:
     mov rcx, 0
 

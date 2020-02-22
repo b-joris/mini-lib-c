@@ -40,18 +40,15 @@ $(NAME):	$(OBJ)
 
 clean:
 	rm -rf $(OBJ)
+	make clean -C ./tests_asm
 
 fclean:	clean
 	rm -rf $(NAME)
+	make fclean -C ./tests_asm
+
+tests_run:	all
+	make -C ./tests_asm
 
 re:	fclean all
 
-test:	re
-	gcc -c -fpic -fPIC main.c
-	gcc -lasm -L./ main.o -o asm
-	rm main.o
-	make clean
-	clear
-	LD_LIBRARY_PATH=./ LD_PRELOAD=./libasm.so ./asm
-
-.PHONY:	all clean fclean re $(NAME)
+.PHONY:	all clean fclean re tests_run $(NAME)

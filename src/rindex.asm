@@ -1,5 +1,7 @@
 global rindex
+global my_rindex
 
+my_rindex:
 rindex:
     mov rax, 0
 

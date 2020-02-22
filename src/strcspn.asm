@@ -1,5 +1,7 @@
 global strcspn
+global my_strcspn
 
+my_strcspn:
 strcspn:
     mov rax, rdi; string
     mov rbx, rsi; reject strings

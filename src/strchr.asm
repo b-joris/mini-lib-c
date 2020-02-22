@@ -1,5 +1,7 @@
 global strchr
+global my_strchr
 
+my_strchr:
 strchr:
     mov rax, 0
 

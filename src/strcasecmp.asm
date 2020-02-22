@@ -1,5 +1,7 @@
 global strcasecmp
+global my_strcasecmp
 
+my_strcasecmp:
 strcasecmp:
     mov rcx, 0
     jmp first_check

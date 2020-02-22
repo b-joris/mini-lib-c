@@ -1,5 +1,7 @@
 global strstr
+global my_strstr
 
+my_strstr:
 strstr:
     mov rax, rdi; haystack
     mov rbx, rsi; needle

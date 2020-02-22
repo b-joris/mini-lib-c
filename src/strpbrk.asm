@@ -1,5 +1,7 @@
 global strpbrk
+global my_strpbrk
 
+my_strpbrk:
 strpbrk:
     mov rax, rdi; string
     mov rbx, rsi; accept

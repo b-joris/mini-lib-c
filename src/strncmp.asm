@@ -1,5 +1,7 @@
 global strncmp
+global my_strncmp
 
+my_strncmp:
 strncmp:
     mov rcx, 0
 

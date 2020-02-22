@@ -1,5 +1,7 @@
 global memcpy
+global my_memcpy
 
+my_memcpy:
 memcpy:
     mov rax, rdi
     mov rcx, 0
