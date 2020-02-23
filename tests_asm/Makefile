@@ -10,12 +10,14 @@ CC	=	gcc
 ASM_FOLDER	=	../src
 
 SRC	=	./test_strlen.c		\
-		./test_strchr.c
+		./test_strchr.c		\
+		./test_memset.c
 
 OBJ	=	$(ASM_FOLDER)/strlen.o	\
 		$(ASM_FOLDER)/strchr.o	\
+		$(ASM_FOLDER)/memset.o
 
-TESTS_FLAGS	=	-I../include -lcriterion --coverage
+TESTS_FLAGS	=	-I../include -lcriterion --coverage -Wall -Wextra -Werror
 
 NAME	=	unit_tests
 

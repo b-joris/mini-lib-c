@@ -12,5 +12,6 @@
 
 size_t my_strlen(const char *s);
 char *my_strchr(const char *s, int c);
+void *my_memset(void *s, int c, size_t n);
 
 #endif /* !ASM_H_ */

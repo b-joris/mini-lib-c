@@ -6,7 +6,6 @@
 */
 
 #include <unistd.h>
-#include <string.h>
 #include <criterion/criterion.h>
 #include "asm.h"
 
