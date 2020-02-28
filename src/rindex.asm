@@ -22,7 +22,7 @@ save_pointer:
 
 return_pointer:
     cmp sil, byte 0
-    je return_byte_0
+    je return_null_byte
     ret
 
 return_null_byte:
