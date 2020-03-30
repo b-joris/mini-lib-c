@@ -1,33 +1,19 @@
 global memmove
-global my_memmmove
+global my_memmove
 
-my_memove:
+my_memmove:
 memmove:
-    cmp rdx, byte 0
-    je exit_memory
-    mov rbx, rdx
-    dec rbx
+    mov rax, rdi
+    mov rcx, 0
 
-copy:
-    cmp rbx, byte 0
-    je memcpy
-    mov rax, [rsi + rbx]
-    push rax
-    dec rbx
-    jmp copy
+loop:
+    cmp rcx, rdx
+    je end
+    mov bl, [rsi + rcx]
+    mov [rdi + rcx], bl
+    inc rcx
+    jmp loop
 
-memcpy:
-    push QWORD [rsi]
-    mov rbx, 0
-
-memory:
-    cmp rbx, rdx
-    je exit_memory
-    pop rax
-    mov [rdi + rbx], al
-    inc rbx
-    jmp memory
-
-exit_memory:
-    lea rax, [rdi]
+end:
+    mov rax, rdi
     ret

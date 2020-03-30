@@ -1,47 +1,42 @@
 global strstr
 global my_strstr
 
+my_strstr:
 strstr:
-    mov rax, 0
-    cmp [rsi], byte 0
-    je found_needle
-    mov rbx, 0
-    jmp do_search
+    mov rax, rdi; haystack
+    mov rbx, rsi; needle
+    mov rcx, 0; needle counter
 
-search:
-    mov rbx, 0
-    jmp loop_search
+    mov r10, 0; result saver
+    jmp haystack_loop
 
-do_search:
-    cmp [rdi + rax], byte 0
-    je return_null_byte
-    mov r8b, [rsi]
-    cmp [rdi + rax], r8b
-    je start_check_needle
-    jmp loop_search
+needle_loop:
+    cmp byte[rbx + rcx], 0
+    je save_result
 
-loop_search:
+    mov r11b, byte[rbx + rcx]
+    cmp byte[rax + rcx], r11b
+    jne reset_needle_variables
+    inc rcx
+    jmp needle_loop
+
+reset_needle_variables:
+    mov rcx, 0
     inc rax
-    jmp do_search
+    jmp haystack_loop
 
-start_check_needle:
-    mov r8, rax
-    jmp loop_check_needle
+haystack_loop:
+    cmp byte[rax], 0
+    je end
+    mov r11b, byte[rbx]
+    cmp byte[rax], r11b
+    je needle_loop
+    inc rax
+    jmp haystack_loop
 
-loop_check_needle:
-    mov r9, [rsi + rbx]
-    cmp r9b, byte 0
-    je found_needle
-    cmp [rdi + r8], r9b
-    jne search
-    inc rbx
-    inc r8
-    jmp loop_check_needle
+save_result:
+    mov r10, rax
 
-found_needle:
-    lea rax, [rdi + rax]
-    ret
-
-return_null_byte:
-    mov rax, 0
+end:
+    mov rax, r10
     ret
