@@ -13,18 +13,20 @@ LD	=	ld
 
 LD_FLAGS	=	-shared
 
-SRC	=	src/strlen.asm		\
-		src/strchr.asm		\
-		src/strcmp.asm		\
-		src/memset.asm		\
-		src/memcpy.asm		\
-		src/strncmp.asm		\
-		src/strcasecmp.asm	\
-		src/rindex.asm		\
-		src/strstr.asm		\
-		src/strpbrk.asm		\
-		src/strcspn.asm		\
-		src/memmove.asm
+SRC_FILES	=	strlen.asm		\
+				strchr.asm		\
+				strcmp.asm		\
+				memset.asm		\
+				memcpy.asm		\
+				strncmp.asm		\
+				strcasecmp.asm	\
+				rindex.asm		\
+				strstr.asm		\
+				strpbrk.asm		\
+				strcspn.asm		\
+				memmove.asm
+
+SRC	=	$(addprefix ./src/, $(SRC_FILES))
 
 OBJ	=	$(SRC:.asm=.o)
 
@@ -35,8 +37,8 @@ all:	$(NAME)
 $(NAME):	$(OBJ)
 	$(LD) $(LD_FLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.asm
-	$(ASM) $(ASFLAGS) $< -o $@
+%.o : %.asm
+	$(ASM) $(ASFLAGS) -o $@ $<
 
 clean:
 	rm -rf $(OBJ)
